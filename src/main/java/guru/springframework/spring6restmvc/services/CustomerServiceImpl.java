@@ -19,7 +19,15 @@ public class CustomerServiceImpl implements CustomerService {
         this.customerMap = new HashMap<>();
 
         Customer customer1 = Customer.builder()
-                .customerName("Eric Cavalier")
+                .customerName("Eric the Cavalier")
+                .id(UUID.randomUUID())
+                .version(1)
+                .createdDate(LocalDateTime.now())
+                .lastModifiedDate(LocalDateTime.now())
+                .build();
+
+        Customer customer2 = Customer.builder()
+                .customerName("Hank the Ranger")
                 .id(UUID.randomUUID())
                 .version(1)
                 .createdDate(LocalDateTime.now())
@@ -27,6 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
                 .build();
 
         customerMap.put(customer1.getId(), customer1);
+        customerMap.put(customer2.getId(), customer2);
     }
 
 
